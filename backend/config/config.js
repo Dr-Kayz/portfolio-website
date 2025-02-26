@@ -11,16 +11,21 @@ const environmentConfig = {
 module.exports = {
   port: process.env.PORT || 3000,
 
-  database: {
-    name: environmentConfig.database,
-    user: environmentConfig.username,
-    password: environmentConfig.password,
-    host: environmentConfig.host,
-    dialect: environmentConfig.dialect
-  },
+  database: environmentConfig,
 
   // For Sequelize CLI
   development: environmentConfig,
   test: environmentConfig,
-  production: environmentConfig
+  production: process.env.DATABASE_URL
+    ? {
+        url: process.env.DATABASE_URL,
+        dialect: 'postgres',
+        dialectOptions: {
+          ssl: {
+            require: true,
+            rejectUnauthorized: false
+          }
+        }
+      }
+    : environmentConfig
 };
