@@ -12,7 +12,7 @@ module.exports = {
     contact: './src/js/contact.js',
   },
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, '../backend/public'),
     filename: 'js/[name].[contenthash].bundle.js',
     clean: true, // Clean the output directory before emit.
   },
@@ -79,5 +79,5 @@ module.exports = {
       }
     ]    
   },
-  mode: 'development', // Set to 'production' for production builds.
+  mode: 'production', // Set to 'production' for production builds.
 };
