@@ -1,7 +1,7 @@
 import '../css/styles.css';
 
 // Base URL 
-const apiBaseUrl = 'http://localhost:3000/api';
+const apiBaseUrl = '/api';
 const SKETCH_MAX_WIDTH = 350; // Maximum sketch width
 
 function renderSketches(projects) {
