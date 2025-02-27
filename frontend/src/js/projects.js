@@ -1,6 +1,6 @@
 import '../css/styles.css';
 
-const apiBaseUrl = 'http://localhost:3000/api';
+const apiBaseUrl = '/api';
 
 function loadProjectsList(projects) {
   const container = document.getElementById('projects-container');

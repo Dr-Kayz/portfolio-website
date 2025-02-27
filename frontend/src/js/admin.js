@@ -1,7 +1,7 @@
 // frontend/src/js/admin.js
 import '../css/styles.css';
 
-const apiBaseUrl = 'http://localhost:3000/api';
+const apiBaseUrl = '/api';
 const adminContainer = document.getElementById('admin-container');
 
 // Check for a saved token in localStorage
