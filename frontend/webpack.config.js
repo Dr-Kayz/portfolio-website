@@ -12,7 +12,7 @@ module.exports = {
     contact: './src/js/contact.js',
   },
   output: {
-    path: path.resolve(__dirname, '../backend/public'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'js/[name].[contenthash].bundle.js',
     clean: true, // Clean the output directory before emit.
   },
