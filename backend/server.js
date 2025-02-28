@@ -4,8 +4,17 @@ const bodyParser = require('body-parser');
 const config = require('./config/config');
 const sequelize = require('./db');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
+
+const uploadsDir = path.join(__dirname, 'uploads');
+
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir);
+  console.log("'uploads' folder created");
+}
+
 
 // Middleware
 app.use(cors());
