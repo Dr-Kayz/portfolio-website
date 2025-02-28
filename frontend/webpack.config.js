@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 
 module.exports = {
   // Entry points for JavaScript files
@@ -62,6 +64,14 @@ module.exports = {
       template: './public/admin.html', 
       filename: 'admin.html',
       chunks: ['admin'],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/images'),
+          to: path.resolve(__dirname, '../backend/public/images'),
+        },
+      ],
     }),
   ],
   devServer: {
